@@ -1,3 +1,7 @@
+RUNS AS A WINDOWS SERVICE. 
+
 There are two services that make up Network Traffic Monitor. Sniffer, for collecting outbound data and Packet Analyzer for offline analysis of collected information.
+
 The network packet sniffer listens on the port 80(HTTP), 25(SMTP) and possibly the IM port and collects packet information in binary information. The binary packet data collected by the packet sniffer is dumped into an offline file in a standardized format. The dump reader reads from the offline pcap dump files. It also casts the binary data into IEEE defined packet formats and extracts header info for all the underlying layer protocols, before finally narrowing it down to the application layer protocol data. Regular expression checker applies regular expression checks on the extracted data and records an incident each for every match found in the document.
+
 A config file(regex_list) contains the list of all the regular expressions that define sensitive data. The user can modify or add to this list at any point of time. These would be Perl compatible regular expressions and shall be used by the Packet Analyzer to detect violations. The Packet Analyzer outputs the results in the form of a list of violations/matches found in the outbound data, after applying the regular expression checks. 
