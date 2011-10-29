@@ -1,0 +1,7 @@
+Start main
+Creating the source string from the filename
+Open the capture file
+Calling dispatch handler
+Calling perform_regex
+Comparing regex- (\D|^)\?[Bb]\d{13,19}\^[\-\/\.\w\s]{2,26}\^[0-9][0-9][01][0-9][0-9]{3}
+
